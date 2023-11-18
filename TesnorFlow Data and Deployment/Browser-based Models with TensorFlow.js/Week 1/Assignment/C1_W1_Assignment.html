@@ -73,10 +73,11 @@
             // hidden layers should be enough to get a high accuracy.  
             const model = tf.sequential();
             
-            model.add(tf.layers.dense({inputShape: [numOfFeatures], activation: "sigmoid", units: 5}));
-            mode.add(tf.layers.dense({activation: "relu", units: 10}));
+            model.add(tf.layers.dense({inputShape: [numOfFeatures], activation: "relu", units: 32}));
+            model.add(tf.layers.dense({activation: "relu", units: 64}));
+            model.add(tf.layers.dense({activation: "relu", units: 32}));
             model.add(tf.layers.dense({activation: "sigmoid", units: 1}));
-            
+
             
             // Compile the model using the binaryCrossentropy loss, 
             // the rmsprop optimizer, and accuracy for your metrics. 
